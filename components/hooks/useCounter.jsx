@@ -7,6 +7,9 @@ export function useCounter(deafultValue=0) {
     function add(value=1){
         setCounter(counter+value)
     }
+    function substract(value=1){
+        setCounter(counter-value)
+    }
 
-    return [counter,add]
+    return [counter,add,substract]
 }

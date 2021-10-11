@@ -1,0 +1,50 @@
+.item{
+    
+    z-index: 5;
+    position: absolute;
+
+    width: var(--item-height);
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.3s;
+}
+.item:hover{
+    transform: scale(1.1);
+}
+.item::after,.item::before{
+    z-index: 10;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100% ;
+    border-radius: 50%;
+    transition:  0.3s;
+}
+.item:hover::before{
+    transform: none;
+}
+.item:active{
+    transform: scale(.9)
+}
+.paper:hover::after{
+    box-shadow: 0 0 0 20px rgb(92, 81, 241), 0 0px 0 20px rgb(55, 40, 121);
+}
+
+.paper{
+    top: var(--half-item);
+    left: var(--half-item);
+    box-shadow: 0 0 0 20px rgb(92, 81, 241);
+}
+.paper::before{
+    box-shadow: 0 0 0 20px rgba(121, 121, 121, 0.877) ;
+    transform: translateY(5px);
+    
+}
+.paper::after{
+    box-shadow: 0 0 0 20px rgb(92, 81, 241), 0 6px 0 20px rgb(55, 40, 121);
+}
